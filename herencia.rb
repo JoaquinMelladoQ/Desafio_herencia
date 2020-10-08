@@ -1,11 +1,11 @@
 class Appointment 
 end
 
-class MonthlyAppointment
+class MonthlyAppointment < Appointment 
 end
 
-class DailyAppointment
+class DailyAppointment < Appointment 
 end
 
-class OneTimeAppointment
+class OneTimeAppointment < Appointment 
 end
