@@ -1,4 +1,9 @@
 class Appointment 
+
+    def initialize( location, prupose, hour, min )
+
+    end
+    
 end
 
 class MonthlyAppointment < Appointment 
