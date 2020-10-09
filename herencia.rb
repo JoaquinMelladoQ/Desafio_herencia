@@ -1,7 +1,7 @@
 class Appointment 
     attr_accessor :location, :purpose,
     :hour, :min
-    
+
     def initialize( location, purpose, hour, min )
         @location = location
         @purpose = purpose
@@ -12,6 +12,11 @@ class Appointment
 end
 
 class MonthlyAppointment < Appointment 
+
+    def initialize( location, purpose, hour, min, day )
+        super( location, purpose, hour, min )
+        @day = day
+    end
 end
 
 class DailyAppointment < Appointment 
