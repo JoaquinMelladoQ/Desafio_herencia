@@ -14,10 +14,18 @@ end
 class MonthlyAppointment < Appointment 
     attr_accessor :location, :purpose,
     :hour, :min, :day
+
     def initialize( location, purpose, hour, min, day )
         super( location, purpose, hour, min )
         @day = day
     end
+
+    def occurs_on?( day )
+    end
+
+    def to_s
+    end
+
 end
 
 class DailyAppointment < Appointment 
