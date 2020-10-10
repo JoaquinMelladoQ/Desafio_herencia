@@ -21,9 +21,11 @@ class MonthlyAppointment < Appointment
     end
 
     def occurs_on?( day )
+        day == self.day
     end
 
     def to_s
+        
     end
 
 end
