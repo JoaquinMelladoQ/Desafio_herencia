@@ -43,7 +43,7 @@ class DailyAppointment < Appointment
     end
 
     def to_s
-        "#{ self.location } #{ self.purpose } #{ self.hour } #{ self.min }"
+        "Reunión diaria en #{ self.location } sobre #{ self.purpose } a la(s) #{ self.hour }:#{ self.min }"
     end
 
 end
@@ -75,3 +75,4 @@ class OneTimeAppointment < Appointment
 end
 
 puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23)
+puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15)
