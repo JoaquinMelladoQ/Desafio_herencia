@@ -69,10 +69,11 @@ class OneTimeAppointment < Appointment
     end
 
     def to_s
-        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.month }#{self.year}#{ self.hour }#{ self.min }"
+        "Reunión única en #{ self.location } sobre #{ self.purpose } el #{ self.day }/#{ self.month }/#{ self.year } a la(s) #{ self.hour }:#{ self.min }"
     end
 
 end
 
 puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23)
 puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15)
+puts OneTimeAppointment.new('Desafío Latam', 'Trabajo', 14, 30, 4, 6, 2019)
