@@ -1,23 +1,29 @@
 class Appointment 
+
     attr_accessor :location, :purpose,
     :hour, :min
 
     def initialize( location, purpose, hour, min )
+
         @location = location
         @purpose = purpose
         @hour = hour
         @min = min
+
     end
     
 end
 
 class MonthlyAppointment < Appointment 
+
     attr_accessor :location, :purpose,
     :hour, :min, :day
 
     def initialize( location, purpose, hour, min, day )
+
         super( location, purpose, hour, min )
         @day = day
+
     end
 
     def occurs_on?( day )
@@ -31,6 +37,7 @@ class MonthlyAppointment < Appointment
 end
 
 class DailyAppointment < Appointment 
+
     def occurs_on?( hour, min )
         self.hour == hour && self.min == min
     end
@@ -38,17 +45,27 @@ class DailyAppointment < Appointment
     def to_s
         "#{ self.location }#{ self.purpose }#{ self.hour }#{ self.min }"
     end
+
 end
 
 class OneTimeAppointment < Appointment 
+
     attr_accessor :location, :purpose, :hour,
     :min, :day, :month, :year
 
     def initialize( location, purpose, hour, 
         min, day, month, year )
+
         super( location, purpose, hour, min )
+        
         @day = day
         @month = month
         @year = year
+
     end
+
+    def occurs_on?( day, month, year )
+
+    end
+
 end
