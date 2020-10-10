@@ -74,6 +74,17 @@ class OneTimeAppointment < Appointment
 
 end
 
-puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23)
-puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15)
-puts OneTimeAppointment.new('Desafío Latam', 'Trabajo', 14, 30, 4, 6, 2019)
+# puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23)
+# puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15)
+# puts OneTimeAppointment.new('Desafío Latam', 'Trabajo', 14, 30, 4, 6, 2019)
+
+puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23).occurs_on?(23)
+# puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23).occurs_on?(22)
+
+puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15).occurs_on?(8, 15)
+# puts DailyAppointment.new('Desafío Latam', 'Educación', 8, 15).occurs_on?(9, 15)
+
+puts OneTimeAppointment.new('Desafío Latam', 'Trabajo', 14, 30, 4, 6, 2019).occurs_on?(4, 6, 2019)
+# puts OneTimeAppointment.new('Desafío Latam', 'Trabajo', 14, 30, 4, 6, 2019).occurs_on?(3, 6, 2019)
+
+
