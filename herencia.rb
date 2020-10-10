@@ -21,17 +21,23 @@ class MonthlyAppointment < Appointment
     end
 
     def occurs_on?( day )
-        day == self.day
-        day == self.day && hour == self.hour
+        self.day == day
     end
 
     def to_s
-        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.hour }"
+        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.hour }#{ self.min }"
     end
 
 end
 
 class DailyAppointment < Appointment 
+    def occurs_on?( hour, min )
+        self.hour == hour && self.min == min
+    end
+
+    def to_s
+        "#{ self.location }#{ self.purpose }#{ self.hour }#{ self.min }"
+    end
 end
 
 class OneTimeAppointment < Appointment 
