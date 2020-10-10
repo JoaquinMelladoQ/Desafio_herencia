@@ -41,4 +41,14 @@ class DailyAppointment < Appointment
 end
 
 class OneTimeAppointment < Appointment 
+    attr_accessor :location, :purpose, :hour,
+    :min, :day, :month, :year
+
+    def initialize( location, purpose, hour, 
+        min, day, month, year )
+        super( location, purpose, hour, min )
+        @day = day
+        @month = month
+        @year = year
+    end
 end
