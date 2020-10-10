@@ -31,7 +31,7 @@ class MonthlyAppointment < Appointment
     end
 
     def to_s
-        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.hour }#{ self.min }"
+        "Reunión mensual en #{ self.location } sobre #{ self.purpose } el día #{ self.day } a la(s) #{ self.hour }:#{ self.min }"
     end
 
 end
@@ -43,7 +43,7 @@ class DailyAppointment < Appointment
     end
 
     def to_s
-        "#{ self.location }#{ self.purpose }#{ self.hour }#{ self.min }"
+        "#{ self.location } #{ self.purpose } #{ self.hour } #{ self.min }"
     end
 
 end
@@ -57,7 +57,7 @@ class OneTimeAppointment < Appointment
         min, day, month, year )
 
         super( location, purpose, hour, min )
-        
+
         @day = day
         @month = month
         @year = year
@@ -65,7 +65,13 @@ class OneTimeAppointment < Appointment
     end
 
     def occurs_on?( day, month, year )
+        self.day == day && self.month == month && self.year == year
+    end
 
+    def to_s
+        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.month }#{self.year}#{ self.hour }#{ self.min }"
     end
 
 end
+
+puts MonthlyAppointment.new('NASA', 'Aliens', 8, 15, 23)
