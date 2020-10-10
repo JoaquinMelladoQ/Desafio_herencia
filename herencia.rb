@@ -22,10 +22,11 @@ class MonthlyAppointment < Appointment
 
     def occurs_on?( day )
         day == self.day
+        day == self.day && hour == self.hour
     end
 
     def to_s
-        
+        "#{ self.location }#{ self.purpose }#{ self.day }#{ self.hour }"
     end
 
 end
